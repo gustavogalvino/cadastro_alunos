@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Logbox</title>
+</head>
+
+<body>
+    <h1>Cadastro de Alunos</h1>
+
+    <a href="/add">Adicionar Aluno</a><br />
+    <h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>RA</td>
+                    <td>Nome</td>
+                    <td>E-mail</td>
+                    <td>Logradouro</td>
+                    <td>Nº</td>
+                    <td>CEP</td>
+                    <td>Complemento</td>
+                    <td>Ações</td>
+                </tr>
+            </thead>
+            <tbody>
+                {%for aluno in cadastro_alunos%}
+                <tr>
+                    <td>{{aluno.ra}}</td>
+                    <td>{{aluno.nome}}</td>
+                    <td>{{aluno.email}}</td>
+                    <td>{{aluno.logradouro}}</td>
+                    <td>{{aluno.numero}}</td>
+                    <td>{{aluno.cep}}</td>
+                    <td>{{aluno.complemento}}</td>
+                    <td>
+                        <a href="/edit/{{aluno.ra}}">Editar</a> |
+                        <a href="/delete/{{aluno.ra}}"> Apagar</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </h3>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
