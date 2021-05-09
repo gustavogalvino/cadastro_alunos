@@ -16,7 +16,7 @@ def busca_cep(cep):
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////logbox.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///logbox.db'
 db = SQLAlchemy(app)
 
 
